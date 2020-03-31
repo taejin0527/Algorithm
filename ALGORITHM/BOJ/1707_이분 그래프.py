@@ -1,3 +1,12 @@
+from collections import deque
+
+
+def bfs(node):
+    colored[node] = 1
+    queue = deque([node])
+
+    while queue:
+        current = queue.popleft()
 
         for next_node in my_graph[current]:
             if colored[next_node] == 0:
