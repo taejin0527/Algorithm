@@ -31,7 +31,7 @@ def rotate_wheel():
         nxt_d = d
         for i in range(n-1, -1, -1):
             if sprocket[i][2] != left:
-                nxt_d += -1
+                nxt_d *= -1
                 left = sprocket[i][6]
                 sprocket[i].rotate(nxt_d)
             else:
@@ -41,7 +41,7 @@ def rotate_wheel():
         nxt_d = d
         for i in range(n + 1, 4):
             if sprocket[i][6] != right:
-                nxt_d += -1
+                nxt_d *= -1
                 right = sprocket[i][2]
                 sprocket[i].rotate(nxt_d)
             else:
