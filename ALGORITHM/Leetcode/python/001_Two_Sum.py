@@ -4,10 +4,8 @@
  * @Date : 2020-08-27
  * @author : User
 
- * @Description :
- Approach 1 : Brute Force
- Approach 2 : Two-pass Hash Table
- Approach 3 : One-pass Hash Table
+ * @Description : java 파일에서 3가지 방법을 모두 보였음으로 최적의 방법만 메모
+ * --> One-pass Hash Table
 
 """
 
@@ -18,10 +16,10 @@ class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         sum_dict = {}
 
-        for i in range(len(nums)):
-            candidate = target - nums[i]
+        for i, num in enumerate(nums):
+            complement = target - num
 
-            if candidate in sum_dict.keys():
-                return [i, candidate]
-
+            if complement in sum_dict:
+                return sum_dict[complement], i
+            sum_dict[num] = i
 
