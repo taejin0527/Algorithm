@@ -6,15 +6,18 @@ N                       섬의 개수
 @return
 answer                  구출할 수 있는 양의 수
 """
-from collections import defaultdict
+import sys
+
+sys.setrecursionlimit(10 ** 8)
+input = sys.stdin.readline
 
 N = int(input())
 graph = [[0, []] for _ in range(N + 1)]
 
-for i in range(2, N+1):
+for i in range(2, N + 1):
     t, a, p = map(lambda x: int(x) if x.isdigit() else x, input().split())
 
-    if t == 'W':
+    if t == "W":
         a = -a
 
     graph[i][0] = a
