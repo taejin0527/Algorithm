@@ -34,3 +34,6 @@ class Solution:
                 end = i + p[i] - 1
 
         return ss[start:end + 1].replace('#', '')
+
+s ="babad"
+answer = Solution().longestPalindrome(s)
